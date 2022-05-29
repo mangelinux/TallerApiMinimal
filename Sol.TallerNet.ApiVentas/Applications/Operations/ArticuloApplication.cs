@@ -1,6 +1,6 @@
 ﻿using Sol.TallerNet.ApiVentas.Repositories.Operations;
 
-namespace Sol.TallerNet.ApiVentas.Applications
+namespace Sol.TallerNet.ApiVentas.Applications.Operations
 {
     public class ArticuloApplication : IArticuloApplication
     {

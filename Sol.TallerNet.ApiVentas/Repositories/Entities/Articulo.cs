@@ -4,7 +4,7 @@ namespace Sol.TallerNet.ApiVentas.Repositories.Entities
 {
     public class Articulo
     {
-        [Key]
+        //[Key]
         public int IdArticulo { get; set; }
         public string Nombre { get; set; }
         public decimal Precio { get; set; }

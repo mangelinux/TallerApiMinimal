@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sol.TallerNet.ApiVentas.Repositories.Context.Configurations;
 using Sol.TallerNet.ApiVentas.Repositories.Entities;
 
 namespace Sol.TallerNet.ApiVentas.Repositories.Context
@@ -10,23 +11,23 @@ namespace Sol.TallerNet.ApiVentas.Repositories.Context
 
         }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.ApplyConfiguration(new ArticuloConfiguration());
-        //    modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ArticuloConfiguration());
+            modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
 
-        //    //modelBuilder.Entity<Articulo>().HasKey(t => t.IdArticulo);
-        //    base.OnModelCreating(modelBuilder);
-        //}
+            //modelBuilder.Entity<Articulo>().HasKey(t => t.IdArticulo);
+            base.OnModelCreating(modelBuilder);
+        }
 
 
-        //public override int SaveChanges()
-        //{
-        //    //aca mi auditoria
-        //    return base.SaveChanges();
-        //}
+        public override int SaveChanges()
+        {
+            //aca mi auditoria
+            return base.SaveChanges();
+        }
 
         public DbSet<Articulo> Articulo { get; set; }
-        //public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }
